@@ -8,9 +8,8 @@ class Pyassimp < Formula
   depends_on "python" => :recommended
   depends_on "assimp"
 
-  def patches
-    DATA
-  end
+  patch :DATA
+  patch :p0, :DATA
 
   def install
     temp_site_packages = lib+"python2.7/site-packages"

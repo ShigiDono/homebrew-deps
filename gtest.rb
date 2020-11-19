@@ -10,12 +10,8 @@ class Gtest < Formula
   depends_on "automake" => :build
   depends_on "libtool" => :build
 
-  def patches
-    # This is necessary to get gtest to function wtih libc++
-    # Otherwise, every catkin package has to export that flag.
-    # The patch only changes the default behavior.
-    :DATA
-  end
+  patch :DATA
+  #patch :p0, :DATA
 
   def install
     system "glibtoolize"
